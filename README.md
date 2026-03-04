@@ -34,6 +34,19 @@ node scripts/start-vibe-cycle.mjs mission-os-vibe --title "MISSION OS Vibe Pilot
 npm run lint && npm test && npm run build
 ```
 
+## MISSION OS Slice 1 commands
+```bash
+# create an OS scaffold
+npm run mission:scaffold -- CONSTRUCTION --base work/mission-os-build/os --status Active
+
+# verify candidate paths stay within OS root
+npm run mission:boundary -- work/mission-os-build/os/CONSTRUCTION projects/PRJ-0001
+npm run mission:boundary -- work/mission-os-build/os/CONSTRUCTION ../NEXUM/secrets
+
+# get status summary
+npm run mission:status -- CONSTRUCTION --base work/mission-os-build/os
+```
+
 ## Notes
 - Keep source-of-truth code here in GitHub.
 - Keep control-plane docs/governance in Nexum workspace.

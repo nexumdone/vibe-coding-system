@@ -3,8 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "node --check scripts/start-vibe-cycle.mjs",
+    "lint": "node --check scripts/start-vibe-cycle.mjs && node --check scripts/mission-os-scaffold.mjs && node --check scripts/mission-os-boundary-check.mjs && node --check scripts/mission-os-status.mjs",
     "test": "node --test",
-    "build": "node -e \"console.log('Build check: no compile step required')\""
+    "build": "node -e \"console.log('Build check: no compile step required')\"",
+    "mission:scaffold": "node scripts/mission-os-scaffold.mjs",
+    "mission:boundary": "node scripts/mission-os-boundary-check.mjs",
+    "mission:status": "node scripts/mission-os-status.mjs"
   }
 }
