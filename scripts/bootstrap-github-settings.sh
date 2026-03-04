@@ -32,14 +32,23 @@ done
 
 # Branch protection for main
 # Requires admin rights on repo.
+# Uses JSON input to avoid form-field schema issues in newer GitHub API validation.
 gh api -X PUT "repos/$REPO/branches/main/protection" \
   -H "Accept: application/vnd.github+json" \
-  -f required_status_checks.strict=true \
-  -f required_status_checks.contexts[]='quality-gates' \
-  -f enforce_admins=true \
-  -f required_pull_request_reviews.required_approving_review_count=1 \
-  -f required_pull_request_reviews.dismiss_stale_reviews=true \
-  -f required_pull_request_reviews.require_code_owner_reviews=false \
-  -f restrictions= >/dev/null
+  --input - >/dev/null <<JSON
+{
+  "required_status_checks": {
+    "strict": true,
+    "contexts": ["quality-gates"]
+  },
+  "enforce_admins": true,
+  "required_pull_request_reviews": {
+    "dismiss_stale_reviews": true,
+    "require_code_owner_reviews": false,
+    "required_approving_review_count": 1
+  },
+  "restrictions": null
+}
+JSON
 
 echo "branch protection configured for $REPO"
