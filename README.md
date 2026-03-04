@@ -48,6 +48,10 @@ npm run mission:boundary -- work/mission-os-build/os/CONSTRUCTION ../NEXUM/secre
 npm run mission:status -- CONSTRUCTION --base work/mission-os-build/os
 ```
 
+## First draft UI
+- Path: `ui/mission-os/index.html`
+- Review guide: `docs/UI_FIRST_DRAFT_REVIEW_GUIDE.md`
+
 ## Notes
 - Keep source-of-truth code here in GitHub.
 - Keep control-plane docs/governance in Nexum workspace.

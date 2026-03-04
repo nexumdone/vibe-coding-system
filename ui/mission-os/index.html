@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MISSION OS - First Draft UI</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>MISSION OS</h1>
+        <p class="muted">Minimal Ops Draft</p>
+        <nav>
+          <button class="nav-btn active" data-view="overview">Overview</button>
+          <button class="nav-btn" data-view="os">Per-OS Dashboard</button>
+          <button class="nav-btn" data-view="events">Boundary Events</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <label>
+            Active OS
+            <select id="osSelect"></select>
+          </label>
+          <div class="pill" id="activeStatus">Status: Draft</div>
+        </header>
+
+        <section id="overview" class="view active">
+          <h2>Fleet Overview</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>OS Count</h3>
+              <p id="osCount">0</p>
+            </article>
+            <article class="card">
+              <h3>Active OS</h3>
+              <p id="activeCount">0</p>
+            </article>
+            <article class="card">
+              <h3>Boundary Alerts</h3>
+              <p id="alertCount">0</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="os" class="view">
+          <h2>Per-OS Dashboard</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Identity</h3>
+              <p id="osIdentity"></p>
+            </article>
+            <article class="card">
+              <h3>Structure Health</h3>
+              <ul id="structureHealth"></ul>
+            </article>
+            <article class="card">
+              <h3>Last Boundary Check</h3>
+              <p id="lastBoundary"></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="events" class="view">
+          <h2>Boundary Events</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>OS</th>
+                <th>Result</th>
+                <th>Path</th>
+              </tr>
+            </thead>
+            <tbody id="eventsTable"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
