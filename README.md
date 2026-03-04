@@ -4,10 +4,11 @@ A GitHub-first starter system for running coding projects through a spec-driven,
 
 ## Core flow
 1. Concept Intake
-2. Specification
-3. Technical Plan
-4. Task Slices
-5. Implement in bounded loops with quality gates
+2. Brainstorm + Option Challenge (required)
+3. Specification (explicit sign-off required)
+4. Technical Plan
+5. Task Slices
+6. Implement in bounded loops with quality gates
 
 ## Repo structure
 - `.github/` issue templates, PR template, quality-gate workflow
@@ -46,6 +47,10 @@ npm run mission:boundary -- work/mission-os-build/os/CONSTRUCTION ../NEXUM/secre
 # get status summary
 npm run mission:status -- CONSTRUCTION --base work/mission-os-build/os
 ```
+
+## First draft UI
+- Path: `ui/mission-os/index.html`
+- Review guide: `docs/UI_FIRST_DRAFT_REVIEW_GUIDE.md`
 
 ## Notes
 - Keep source-of-truth code here in GitHub.
