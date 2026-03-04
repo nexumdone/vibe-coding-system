@@ -1,0 +1,37 @@
+name: "03 - Task Slice"
+description: Create one small, testable implementation task.
+title: "[Task] <task-id> <short description>"
+labels: ["phase:tasks"]
+body:
+  - type: input
+    id: taskid
+    attributes:
+      label: Task ID
+      placeholder: T-001
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What exactly should change?
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Allowed files to change
+      description: Scope lock list.
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Acceptance tests
+      description: How will we verify completion?
+    validations:
+      required: true
+  - type: textarea
+    id: deps
+    attributes:
+      label: Dependencies / blockers

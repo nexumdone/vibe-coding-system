@@ -1,0 +1,28 @@
+name: "04 - Blocker"
+description: Report blocked execution requiring intervention.
+title: "[Blocked] <task-id> <reason>"
+labels: ["status:blocked", "type:bug"]
+body:
+  - type: input
+    id: taskid
+    attributes:
+      label: Task ID
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure summary
+      description: What failed and where?
+    validations:
+      required: true
+  - type: textarea
+    id: attempts
+    attributes:
+      label: Attempts made
+      description: Include command outputs and evidence.
+  - type: textarea
+    id: next
+    attributes:
+      label: Recommended next step
+      description: What intervention is needed?

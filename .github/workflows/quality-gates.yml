@@ -1,0 +1,52 @@
+name: Quality Gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps (if package.json exists)
+        run: |
+          if [ -f package-lock.json ]; then npm ci;
+          elif [ -f package.json ]; then npm install;
+          else echo "No package.json found, skipping install"; fi
+
+      - name: Lint (if script exists)
+        run: |
+          if [ -f package.json ] && node -e "const p=require('./package.json'); process.exit((p.scripts&&p.scripts.lint)?0:1)"; then
+            npm run lint
+          else
+            echo "No lint script; skipping"
+          fi
+
+      - name: Test (if script exists)
+        run: |
+          if [ -f package.json ] && node -e "const p=require('./package.json'); process.exit((p.scripts&&p.scripts.test)?0:1)"; then
+            npm test
+          else
+            echo "No test script; skipping"
+          fi
+
+      - name: Build (if script exists)
+        run: |
+          if [ -f package.json ] && node -e "const p=require('./package.json'); process.exit((p.scripts&&p.scripts.build)?0:1)"; then
+            npm run build
+          else
+            echo "No build script; skipping"
+          fi
+
+      - name: Scope-lock reminder
+        run: |
+          echo "Ensure PR states intended files and no unrelated edits."

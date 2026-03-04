@@ -1,0 +1,33 @@
+name: "02 - Specification"
+description: Define user journeys, requirements, and acceptance criteria.
+title: "[Spec] <feature/system name>"
+labels: ["phase:specify"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Non-technical summary
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Functional + non-functional requirements
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: outofscope
+    attributes:
+      label: Out of scope

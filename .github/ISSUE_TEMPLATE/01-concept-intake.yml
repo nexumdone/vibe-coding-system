@@ -1,0 +1,29 @@
+name: "01 - Concept Intake"
+description: Capture non-technical idea and viability constraints.
+title: "[Concept] <project idea>"
+labels: ["phase:specify"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea (plain language)
+      description: What are we building and why?
+    validations:
+      required: true
+  - type: textarea
+    id: users
+    attributes:
+      label: Users and outcomes
+      description: Who is this for and what measurable outcome should improve?
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Time, budget, platform, integrations, no-go rules.
+  - type: textarea
+    id: risk
+    attributes:
+      label: Brutal honesty
+      description: Top 3 reasons this may fail + safer alternatives.
