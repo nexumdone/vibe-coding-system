@@ -1,0 +1,10 @@
+{
+  "name": "vibe-coding-system",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node --check scripts/start-vibe-cycle.mjs",
+    "test": "node --test",
+    "build": "node -e \"console.log('Build check: no compile step required')\""
+  }
+}

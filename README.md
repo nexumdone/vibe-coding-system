@@ -25,6 +25,15 @@ A GitHub-first starter system for running coding projects through a spec-driven,
 - type:feature, type:bug, type:refactor, type:chore
 - status:blocked, status:ready, priority:p0, priority:p1, priority:p2
 
+## Quick start for first build mode
+```bash
+# scaffold a new concept->spec->plan->tasks workspace
+node scripts/start-vibe-cycle.mjs mission-os-vibe --title "MISSION OS Vibe Pilot"
+
+# run quality checks locally before pushing
+npm run lint && npm test && npm run build
+```
+
 ## Notes
 - Keep source-of-truth code here in GitHub.
 - Keep control-plane docs/governance in Nexum workspace.
