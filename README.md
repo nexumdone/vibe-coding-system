@@ -4,10 +4,11 @@ A GitHub-first starter system for running coding projects through a spec-driven,
 
 ## Core flow
 1. Concept Intake
-2. Specification
-3. Technical Plan
-4. Task Slices
-5. Implement in bounded loops with quality gates
+2. Brainstorm + Option Challenge (required)
+3. Specification (explicit sign-off required)
+4. Technical Plan
+5. Task Slices
+6. Implement in bounded loops with quality gates
 
 ## Repo structure
 - `.github/` issue templates, PR template, quality-gate workflow
